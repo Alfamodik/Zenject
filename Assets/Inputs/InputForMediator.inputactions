@@ -1,0 +1,54 @@
+{
+    "name": "InputForMediator",
+    "maps": [
+        {
+            "name": "Get",
+            "id": "9bb501ff-a972-4927-be9a-b7fb0a664cf1",
+            "actions": [
+                {
+                    "name": "Health",
+                    "type": "Button",
+                    "id": "5f0e0f59-0086-4d9e-b155-0953e670f20f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Expierence",
+                    "type": "Button",
+                    "id": "6ce03871-314c-40c3-9aef-e82e3228cea2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "82b2e419-8560-4daa-9874-cdd06fd57fbc",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Health",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "527e50b2-1a95-48ff-9d44-329988e280f9",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Expierence",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
