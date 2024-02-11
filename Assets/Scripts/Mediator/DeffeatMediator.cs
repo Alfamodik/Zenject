@@ -5,9 +5,9 @@ public class DeffeatMediator : IDisposable
     private DeffeatPanel _deffeatPanel;
     private Level _level;
 
-    public DeffeatMediator(DeffeatPanel deffeatPanel, Level level)
+    public DeffeatMediator(DeffeatPanel deffeatPanel, Level deffeatNotifies)
     {
-        _level = level;
+        _level = deffeatNotifies;
         _deffeatPanel = deffeatPanel;
 
         _level.Defeat += OnLevelDeffeat;

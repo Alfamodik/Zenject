@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 1033774884}
   - component: {fileID: 1033774885}
   m_Layer: 0
-  m_Name: Handle Input
+  m_Name: Handle Gameplay Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -605,7 +605,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1033774885
 MonoBehaviour:
@@ -621,6 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gamagePerExperience: 1
   _healthPointPerHealth: 1
+  _scorePerHealth: 1
   _actionCooldown: 0.01
 --- !u!1 &1084319079
 GameObject:
@@ -736,6 +737,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04939ac50284a9942b8a623393945cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthBar: {fileID: 131143679}
+  _playerLevelView: {fileID: 1312558263}
+  _healthConfig: {fileID: 11400000, guid: 743207e179e8bdc4cb2b9c87e79f5a85, type: 2}
+  _playerLevelConfig: {fileID: 11400000, guid: 4346a0680a36da2479cca9beabf4d849, type: 2}
+  _deffeatPanel: {fileID: 2053180371}
+  _handleInput: {fileID: 1033774885}
 --- !u!114 &1156956692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,7 +788,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1312558261
 GameObject:
@@ -1066,55 +1073,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532548371}
   m_CullTransparentMesh: 1
---- !u!1 &1616852123
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1616852125}
-  - component: {fileID: 1616852124}
-  m_Layer: 0
-  m_Name: Bootstrap
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1616852124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616852123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1267a5cab40ad4846bd2423904c4411c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _handleInput: {fileID: 1033774885}
-  _deffeatPanel: {fileID: 2053180371}
-  _scoreView: {fileID: 1312558263}
-  _healthBar: {fileID: 131143679}
-  _playerMaxHealth: 100
---- !u!4 &1616852125
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616852123}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1794415192
 GameObject:
   m_ObjectHideFlags: 0

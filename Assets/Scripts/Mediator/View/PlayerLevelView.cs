@@ -1,13 +1,15 @@
 ﻿using TMPro;
 using UnityEngine;
+using Zenject;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
-public class LevelView : MonoBehaviour
+public class PlayerLevelView : MonoBehaviour
 {
     private TextMeshProUGUI _text;
     private PlayerLevel _playerLevel;
 
-    public void Initilize(PlayerLevel playerLevel)
+    [Inject]
+    private void Construct(PlayerLevel playerLevel)
     {
         _playerLevel = playerLevel;
         _text = GetComponent<TextMeshProUGUI>();

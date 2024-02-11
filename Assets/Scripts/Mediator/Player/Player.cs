@@ -1,4 +1,6 @@
-public class Player
+using System;
+
+public class Player : IDisposable
 {
     private Health _health;
     private PlayerLevel _level;
@@ -12,7 +14,11 @@ public class Player
         _restartNotifies = restartNotifies;
         _restartNotifies.Restart += Reset;
     }
+
+    public void Dispose() => _restartNotifies.Restart -= Reset;
+
     public Health Health => _health;
+
     public PlayerLevel Level => _level;
 
     public void Reset()

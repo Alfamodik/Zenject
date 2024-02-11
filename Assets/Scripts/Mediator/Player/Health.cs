@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 public class Health : INotifiesAtDeath
 {
@@ -8,14 +7,16 @@ public class Health : INotifiesAtDeath
 
     public readonly int MaxHealth;
     private int _health;
-    
-    public Health(int maxHealth)
-    {
-        if (maxHealth < 0)
-            throw new ArgumentOutOfRangeException(nameof(maxHealth), "Начальное здоровье не может быть меньше нуля!");
 
-        _health = maxHealth;
-        MaxHealth = maxHealth;
+    public Health(HealthConfig config)
+    {
+        if (config.MaxHealth < 0)
+            throw new ArgumentOutOfRangeException(nameof(config.MaxHealth), "Начальное здоровье не может быть меньше нуля!");
+
+        _health = config.StartHealth;
+        MaxHealth = config.MaxHealth;
+
+        OnHealthChanged?.Invoke();
     }
 
     public int GetHealth => _health;

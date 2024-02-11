@@ -1,15 +1,17 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 [RequireComponent(typeof(Image))]
-public class HealthBar: MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Gradient _gradient;
     private Image _healthBar;
     private Health _health;
 
-    public void Initialize(Health health)
+    [Inject]
+    private void Construct(Health health)
     {
         _health = health;
         _healthBar = GetComponent<Image>();

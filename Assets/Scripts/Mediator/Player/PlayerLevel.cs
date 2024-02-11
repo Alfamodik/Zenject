@@ -4,10 +4,11 @@
     private readonly int scoreByUpgrade;
     private Score _score;
 
-    public PlayerLevel(Score score, int scoreByUpgradeLevel)
+    public PlayerLevel(Score score, PlayerLevelConfig config)
     {
-        scoreByUpgrade = scoreByUpgradeLevel;
+        scoreByUpgrade = config.ScoreByUpgrade;
         _score = score;
+
         _score.OnScoreChanged += UpdateInfoByLevel;
     }
 

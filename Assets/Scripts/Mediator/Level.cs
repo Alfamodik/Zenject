@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Level : IDisposable, IRestartNotifies
+public class Level : IDisposable, IDeffeatNotifies, IRestartNotifies
 {
     public event Action Restart;
     public event Action Defeat;
@@ -24,9 +24,5 @@ public class Level : IDisposable, IRestartNotifies
         StartMe();
     }
 
-    public void OnDefeat()
-    {
-
-        Defeat?.Invoke();
-    }
+    public void OnDefeat() => Defeat?.Invoke();
 }
