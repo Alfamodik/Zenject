@@ -4,6 +4,8 @@ using Zenject;
 
 public class GameResultHandler : MonoBehaviour
 {
+    [SerializeField] private GameplayHUD gameplayHUD;
+
     private IVictoryConditions _victoryConditions;
     private BallCollectMediator _ballCollectMediator;
 
@@ -37,8 +39,7 @@ public class GameResultHandler : MonoBehaviour
     {
         _victoryConditions.AddBallsToCollected(ballColor);
 
-        if (_victoryConditions.IsVictory())
-            Debug.Log("Вы победили!");
-            //show panel
+        if(_victoryConditions.IsVictory())
+            gameplayHUD.Show();
     }
 }

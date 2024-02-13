@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 public class GameplayHUD : MonoBehaviour
 {
-    [SerializeField] private Button _button;
+    [SerializeField] private LevelRestartButton _levelRestartButton;
+    [SerializeField] private GoToMainMenuButton _goToMainMenuButton;
 
     private SceneLoadMediator _sceneLoadMediator;
 
@@ -13,11 +13,24 @@ public class GameplayHUD : MonoBehaviour
         => _sceneLoadMediator = sceneLoadMediator;
 
     private void OnEnable()
-        => _button.onClick.AddListener(OnMainMenuClick);
+    {
+        _goToMainMenuButton.Click += GoToMainMenu;
+        _levelRestartButton.Click += RestartCurrentLevel;
+    }
 
     private void OnDisable()
-        => _button.onClick.RemoveListener(OnMainMenuClick);
+    {
+        _goToMainMenuButton.Click -= GoToMainMenu;
+        _levelRestartButton.Click -= RestartCurrentLevel;
+    }
 
-    public void OnMainMenuClick()
+    public void Show() => gameObject.SetActive(true);
+
+    public void Hide() => gameObject.SetActive(false);
+
+    public void RestartCurrentLevel(VictoryConditions victoryConditions)
+        => _sceneLoadMediator.GoToGameplayLevel(new LevelLoadingData(victoryConditions));
+
+    public void GoToMainMenu()
         => _sceneLoadMediator.GoToMainMenu();
 }
