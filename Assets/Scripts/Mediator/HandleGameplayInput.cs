@@ -10,13 +10,13 @@ public class HandleGameplayInput : MonoBehaviour
     [SerializeField] private float _actionCooldown;
 
     private InputForMediator _input;
-    private Player _player;
+    private CharacterMediator _character;
 
     [Inject]
-    private void Construct(InputForMediator input, Player player)
+    private void Construct(InputForMediator input, CharacterMediator character)
     {
         _input = input;
-        _player = player;
+        _character = character;
 
         _input.Enable();
         StartCoroutine(Handle());
@@ -34,13 +34,13 @@ public class HandleGameplayInput : MonoBehaviour
         {
             if(_input.Get.Expierence.inProgress)
             {
-                _player.Health.GetDamage(_gamagePerExperience);
-                _player.Level.Score.AddScore(_scorePerHealth);
+                _character.Health.GetDamage(_gamagePerExperience);
+                _character.Level.Score.AddScore(_scorePerHealth);
                 yield return new WaitForSeconds(_actionCooldown);
             }
             else if(_input.Get.Health.inProgress)
             {
-                _player.Health.GetHeal(_healthPointPerHealth);
+                _character.Health.GetHeal(_healthPointPerHealth);
                 yield return new WaitForSeconds(_actionCooldown);
             }
             else

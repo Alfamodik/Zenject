@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Level : IDisposable, IDeffeatNotifies, IRestartNotifies
+public class Level : IDisposable, IDeffeatNotifier, IRestartNotifier
 {
     public event Action Restart;
     public event Action Defeat;

@@ -10,7 +10,7 @@ public class Health : INotifiesAtDeath
 
     public Health(HealthConfig config)
     {
-        if (config.MaxHealth < 0)
+        if(config.MaxHealth < 0)
             throw new ArgumentOutOfRangeException(nameof(config.MaxHealth), "Начальное здоровье не может быть меньше нуля!");
 
         _health = config.StartHealth;
@@ -23,13 +23,13 @@ public class Health : INotifiesAtDeath
 
     public void GetDamage(int damage)
     {
-        if (damage <= 0)
+        if(damage <= 0)
             throw new ArgumentOutOfRangeException(nameof(damage), "Урон не может быть меньше или равет нулю!");
 
         _health -= damage;
         OnHealthChanged?.Invoke();
 
-        if (_health < 0)
+        if(_health < 0)
         {
             _health = 0;
             Death?.Invoke();
@@ -38,10 +38,10 @@ public class Health : INotifiesAtDeath
 
     public void GetHeal(int heal)
     {
-        if (heal <= 0)
+        if(heal <= 0)
             throw new ArgumentOutOfRangeException(nameof(heal), "Восстановление не может быть меньше или равет нулю!");
 
-        if ((_health + heal) > MaxHealth)
+        if((_health + heal) > MaxHealth)
             _health = MaxHealth;
         else
             _health += heal;

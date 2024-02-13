@@ -14,8 +14,8 @@ public class LevelRestartButton : MonoBehaviour
     [Inject]
     private void Construct(LevelLoadingData data)
     {
-        _victoryConditions = data.VictoryConditions;
         _button = GetComponent<Button>();
+        _victoryConditions = data.VictoryConditions;
     }
 
     private void OnEnable()

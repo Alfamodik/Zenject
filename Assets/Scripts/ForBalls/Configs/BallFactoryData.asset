@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a97b6717ef7604880f2b7ba78238e7, type: 3}
+  m_Name: BallFactoryData
+  m_EditorClassIdentifier: 
+  _red: {fileID: 8131267399323759377, guid: cfc7c8b3d70ef4d47ad2783b704cc47c, type: 3}
+  _green: {fileID: 5424158915218650738, guid: 37d2628edb1c9c24597fde0ee88609bc, type: 3}
+  _blue: {fileID: 6200381206314559513, guid: 75fcb97d359167f4c8506515a14664d6, type: 3}
